@@ -14,7 +14,7 @@ class Pockemon
                     <th scope="row">${this.id}</th>
                     <td>${this.pockName}</td>
                     <td>${this.description}</td>
-                    <td><img src="${this.url}" alt="pockemon No.${this.id}" width="150" height="150"></td>
+                    <td><img src="${this.url.replace('http', 'https')}" alt="pockemon No.${this.id}" width="150" height="150"></td>
                 </tr>`
     }
 }
