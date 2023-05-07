@@ -1,0 +1,10 @@
+body {direction:rtl;padding-right:20px;background-color:lightgray; font-family:sans-serif;}
+h1   {padding-right: 8%; font-family: Tahoma; color: darkolivegreen;}
+h3   {padding-right: 3%;}
+hr   {width:30%;text-align:right;margin-right:0;}
+span {font-family:Brush Script;font-style:italic;font-weight:bolder;color:rgb(72,91,40)}
+input[type=submit]    
+     {background-color:crimson;color:white;font-weight:bold;
+      font-size: medium; width: 80px; height: 30px;  border: 0 none;
+      cursor: pointer; border-radius: 5px;}  
+.buttonHolder{ text-align: right; margin-right:11% }      
