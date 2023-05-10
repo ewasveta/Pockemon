@@ -5,7 +5,7 @@ class Pockemon
         this.id = id
         this.pockName = pockName
         this.description = descript
-        this.url = url
+        this.url = "https://assets.pokemon.com/assets/cms2/img/pokedex/detail"+url.slice(url.lastIndexOf('/'))
         this.types = types
     }
 
@@ -15,7 +15,7 @@ class Pockemon
                     <th scope="row">${this.id}</th>
                     <td>${this.pockName}</td>
                     <td>${this.description}</td>
-                    <td><img src="${this.url.replace('http','https')}" alt="pockemon No.${this.id}" width="150" height="150"></td>
+                    <td><img src="${this.url}" alt="pockemon No.${this.id}" width="150" height="150"></td>
                 </tr>`
     }
 
@@ -42,7 +42,7 @@ class Pockemon
         return  `
             ${div}
                 <div style="display: table-cell;">
-                    <img src="${this.url.replace('http','https')}" class="d-block w-50" alt="1" style="float:left; padding-bottom: 0em; height: 90vmin;">
+                    <img src="${this.url}" class="d-block w-50" alt="1" style="float:left; padding-bottom: 0em; height: 90vmin;">
                     <h1>${this.pockName}</h1>
                     <p>${this.description}</p>
                     <p>${this.types.toString()}</p>                
