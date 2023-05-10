@@ -1,3 +1,5 @@
+
+
 async function getPocks()
 {
     try 
@@ -14,19 +16,21 @@ async function getPocks()
 }
 //getPocks()
 
-async function setup() 
+async function fillCaro() 
 {
     const pocks = await getPocks()
 
-    const tbody = document.querySelector("#preview")   
+    const btns = document.querySelector("#btnInd") 
+    const pics = document.querySelector("#caroIn")  
    
     pocks.forEach((p) => 
     {
-        const beast = new Pockemon(p.pkdx_id, p.name, p.description, p.art_url)
+        const beast = new Pockemon(p.pkdx_id, p.name, p.description, p.art_url, p.types)
 
-        tbody.innerHTML += beast.createRow();
+        btns.innerHTML += beast.createBtns();
+        pics.innerHTML += beast.createPics();
     }); 
     
 }
   
-setup() 
+fillCaro() 

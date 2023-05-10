@@ -1,11 +1,12 @@
 class Pockemon
 {
-    constructor(id, pockName=0, descript=0, url=0)
+    constructor(id, pockName=0, descript=0, url=0, types=0)
     {
         this.id = id
         this.pockName = pockName
         this.description = descript
         this.url = url
+        this.types = types
     }
 
     createRow()
@@ -14,7 +15,39 @@ class Pockemon
                     <th scope="row">${this.id}</th>
                     <td>${this.pockName}</td>
                     <td>${this.description}</td>
-                    <td><img src="${this.url.replace('http', 'https')}" alt="pockemon No.${this.id}" width="150" height="150"></td>
+                    <td><img src="${this.url.replace('http','https')}" alt="pockemon No.${this.id}" width="150" height="150"></td>
                 </tr>`
+    }
+
+    createBtns()
+    {
+        if(this.id == 1)
+            return  `
+            <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                    `
+        else        
+            return  `          
+            <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="${this.id-1}" aria-label="Slide ${this.id}"></button>
+                    `
+    }
+
+    createPics()
+    {
+        let div = ''
+        if(this.id == 1)
+            div = `<div class="carousel-item active" data-bs-interval="2000">`
+        else
+            div = `<div class="carousel-item" data-bs-interval="2000">` 
+
+        return  `
+            ${div}
+                <div style="display: table-cell;">
+                    <img src="${this.url.replace('http','https')}" class="d-block w-50" alt="1" style="float:left; padding-bottom: 0em; height: 90vmin;">
+                    <h1>${this.pockName}</h1>
+                    <p>${this.description}</p>
+                    <p>${this.types.toString()}</p>                
+                </div>
+            </div>
+                `
     }
 }
